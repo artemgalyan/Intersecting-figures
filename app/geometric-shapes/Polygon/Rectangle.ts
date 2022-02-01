@@ -1,9 +1,9 @@
-import { Utils } from '../../Utils.js';
 import {Polygon} from "./Polygon.js";
+import {PolygonManager} from "./PolygonManager.js";
 
 class Rectangle extends Polygon {
     constructor(shapeId: number, width: number, height: number) {
-        super(shapeId, Utils.getPointsForRectangle(width, height));
+        super(shapeId, PolygonManager.GetPointsForRectangle(width, height));
     }
 }
 
