@@ -1,13 +1,12 @@
-import { Point } from './Point.js';
-import { Shape } from './Shape.js';
-import { Utils } from '../Utils.js';
+import { Point } from '../Point.js';
+import { Shape } from '../Shape.js';
+import { Utils } from '../../Utils.js';
 
 class Polygon extends Shape {
 
     constructor(shapeId: number, points: Point[]) {
         super(shapeId, points);
     }
-
     public draw(context: CanvasRenderingContext2D) {
         context.beginPath();
         context.moveTo(this.points[0].x, this.points[0].y);

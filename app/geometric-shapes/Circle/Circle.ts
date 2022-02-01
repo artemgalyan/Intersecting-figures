@@ -1,6 +1,6 @@
-import { Point } from './Point.js';
-import { Shape } from './Shape.js';
-import { Utils } from '../Utils.js';
+import { Point } from '../Point.js';
+import { Shape } from '../Shape.js';
+import { Utils } from '../../Utils.js';
 
 class Circle extends Shape {
 

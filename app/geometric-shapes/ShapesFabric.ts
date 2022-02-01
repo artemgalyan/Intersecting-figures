@@ -1,7 +1,7 @@
 import {Point} from './Point.js'
-import { Polygon } from "./Polygon.js";
-import { Rectangle } from "./Rectangle.js"
-import { Circle } from './Circle.js';
+import { Polygon } from "./Polygon/Polygon.js";
+import { Rectangle } from "./Polygon/Rectangle.js"
+import { Circle } from './Circle/Circle.js';
 
 class ShapesFabric{
 
