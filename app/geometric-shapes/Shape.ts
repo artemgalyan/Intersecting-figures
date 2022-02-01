@@ -1,29 +1,26 @@
 import { Point } from "./Point.js"
 
 abstract class Shape {
-
+  private static readonly FILL_COLOR: string = "#00FF00";
   public isFill: boolean;
   public points: Point[];
   public shapeId: number;
-
-  constructor(shapeId: number, points: Point[]) {
+  protected constructor(shapeId: number, points: Point[]) {
     this.shapeId = shapeId;
     this.points = points;
     this.isFill = false;
   }
-
-  public upperPointY(): number { return null; }
-  public leftPointX(): number { return null; }
-  public lowerPointY(): number { return null; }
-  public rightPointX(): number { return null; }
-  public draw(context: CanvasRenderingContext2D) { }
-  public contains(x: number, y: number): boolean { return null; }
-  public getPointsForUpdateStatus(): Point[] { return null; }
+  public abstract upperPointY(): number;
+  public abstract leftPointX(): number;
+  public abstract lowerPointY(): number;
+  public abstract rightPointX(): number;
+  public abstract contains(x: number, y: number): boolean;
+  public abstract draw(context: CanvasRenderingContext2D);
+  public abstract getPointsForUpdateStatus(): Point[];
   public fill(context: CanvasRenderingContext2D) {
-    context.fillStyle = '#FF0000';
+    context.fillStyle = Shape.FILL_COLOR;
     context.fill();
   }
-
   public updateStatusShape(shapes: Shape[]) {
     let firstFlag: boolean = false;;
     let secondFlag: boolean = false;;
