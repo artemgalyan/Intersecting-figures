@@ -12,14 +12,6 @@ class Utils {
         new Point(leftPointX, lowerPointY)];
         return points;
     }
-
-    public static isInRectangle(points: Point[], x: number, y: number): boolean {
-        if (x > this.pointsLeftX(points) && x < this.pointsRightX(points) &&
-            y > this.pointsUpperY(points) && y < this.pointsLowerY(points)) {
-            return true;
-        }
-        return false;
-    }
     public static isInPolygon(points: Point[], x: number, y: number): boolean {
         let result: boolean = false;
         let j: number = points.length - 1;
