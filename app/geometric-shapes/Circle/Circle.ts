@@ -37,7 +37,7 @@ class Circle extends Shape {
 
     public getPointsForUpdateStatus(): Point[] {
         let points: Point[] = [];
-        for (let i = 0; i < 32; i++) {
+        for (let i = 0; i < Shape.SPLIT_ACCURACY; i++) {
             let x = this.points[0].x + this.radius * Math.cos(i * 2 / 32 * Math.PI);
             let y = this.points[0].y + this.radius * Math.sin(i * 2 / 32 * Math.PI);
             points.push(new Point(x, y));
