@@ -45,12 +45,18 @@ class Polygon extends Shape {
 
     public getPointsForUpdateStatus(): Point[] {
         let points: Point[] = [];
-        for (let i = 0; i < this.points.length; i++) {
-            let deltaX: number;
-            let deltaY: number;
-            points.push(new Point(this.points[i].x, this.points[i].y));
+        Polygon.PushArrayIntoArray(points, this.points);
+        for (let i = 0; i < this.points.length; ++i) {
+            let A = this.points[i];
+            for (let j = i; j < this.points.length; ++j) {
+                let B = this.points[j];
+                Polygon.PushArrayIntoArray(points, PointsManager.SplitSection(A, B, Shape.SPLIT_ACCURACY));
+            }
         }
         return points;
+    }
+    private static PushArrayIntoArray<T>(to: T[], from: T[]) {
+        from.forEach(element => to.push(element));
     }
 }
 
