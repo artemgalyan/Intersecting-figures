@@ -1,11 +1,9 @@
 import { Point } from '../Point.js';
 import { Shape } from '../Shape.js';
-import { Utils } from '../../Utils.js';
+import {CirclePointManager} from "./CirclePointManager.js";
 
 class Circle extends Shape {
-
-    private radius: number;
-
+    public readonly radius: number;
     constructor(shapeId: number, radius: number) {
         super(shapeId, [new Point(0, 0)]);
         this.radius = radius;
@@ -22,20 +20,19 @@ class Circle extends Shape {
     }
 
     public contains(x: number, y: number): boolean {
-        return Utils.isInCircle(this.points, this.radius, x, y);
+        return CirclePointManager.IsInCircle(this, x, y);
     }
-
     public upperPointY(): number {
-        return Utils.circleUpperY(this.points, this.radius);
+        return CirclePointManager.GetTheHighestPoint(this).y;
     }
     public leftPointX(): number { 
-        return Utils.circleLeftX(this.points, this.radius);
+        return CirclePointManager.GetTheLeftmostPoint(this).x;
      }
     public lowerPointY(): number { 
-        return Utils.circleLowerY(this.points, this.radius);
+        return CirclePointManager.GetTheLowestPoint(this).y;
      }
     public rightPointX(): number { 
-        return Utils.circleRightX(this.points, this.radius);;
+        return CirclePointManager.GetTheRightmostPoint(this).x;
      }
 
     public getPointsForUpdateStatus(): Point[] {
