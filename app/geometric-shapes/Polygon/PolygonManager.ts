@@ -1,7 +1,7 @@
 import {Point} from "../Point.js";
 import {Polygon} from "./Polygon.js";
 
-class PolygonIntersectionManager {
+class PolygonManager {
     public static IsInPolygon(polygon: Polygon, x: number, y: number): boolean {
         let points: Point[] = polygon.points;
         let result: boolean = false;
@@ -18,6 +18,15 @@ class PolygonIntersectionManager {
         }
         return result;
     }
+    public static GetPointsForRectangle(weight: number, height: number): Point[] {
+        let leftPointX: number = 0;
+        let upperPointY: number = 0;
+        let rightPointX: number = leftPointX + weight;
+        let lowerPointY: number = upperPointY + height;
+        return [new Point(leftPointX, upperPointY),
+            new Point(rightPointX, upperPointY), new Point(rightPointX, lowerPointY),
+            new Point(leftPointX, lowerPointY)];
+    }
 }
 
-export {PolygonIntersectionManager}
+export {PolygonManager}
