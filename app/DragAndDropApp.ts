@@ -1,13 +1,13 @@
-import { Shape } from './geometric-shapes/Shape.js';
-import { Point } from './geometric-shapes/Point.js'
-import { ShapesFabric } from './geometric-shapes/ShapesFabric.js'
+import {Shape} from './geometric-shapes/Shape.js';
+import {Point} from './geometric-shapes/Point.js'
+import {ShapesFabric} from './geometric-shapes/ShapesFabric.js'
 
 class DragAndDropApp {
 
-    private canvas: HTMLCanvasElement;
-    private context: CanvasRenderingContext2D;
+    private readonly canvas: HTMLCanvasElement;
+    private readonly context: CanvasRenderingContext2D;
     private drag: boolean;
-    private shapes: Shape[];
+    private readonly shapes: Shape[];
     private oldPoints: Point[];
     private indexDragShape: number;
     private x: number;
@@ -77,8 +77,7 @@ class DragAndDropApp {
         let finalResult = false;
         this.shapes.forEach(function (value) {
             result = false;
-            let shape: Shape = value;
-            result = shape.contains(x, y);
+            result = value.contains(x, y);
             if (result) {
                 finalResult = true;
             }
@@ -92,8 +91,7 @@ class DragAndDropApp {
         let finalIndex: number = 0;
         this.shapes.forEach(function (value) {
             result = false;
-            let shape: Shape = value;
-            result = shape.contains(x, y);
+            result = value.contains(x, y);
             if (result) {
                 finalIndex = index;
             }
