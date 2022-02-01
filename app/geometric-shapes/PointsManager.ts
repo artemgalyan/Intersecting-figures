@@ -10,6 +10,7 @@ class PointsManager {
         }
         return highestPoint;
     }
+
     public static GetTheLowestPoint(points: Point[]): Point {
         let lowestPoint: Point = points[0];
         for (let i = 0; i < points.length; i++) {
@@ -19,6 +20,7 @@ class PointsManager {
         }
         return lowestPoint;
     }
+
     public static GetLeftmostPoint(points: Point[]): Point {
         let leftmostPoint: Point = points[0];
         for (let i = 0; i < points.length; i++) {
@@ -28,6 +30,7 @@ class PointsManager {
         }
         return leftmostPoint;
     }
+
     public static GetRightmostPoint(points: Point[]): Point {
         let rightmostPoint: Point = points[0];
         for (let i = 0; i < points.length; i++) {
@@ -36,6 +39,20 @@ class PointsManager {
             }
         }
         return rightmostPoint;
+    }
+
+    public static SplitSection(from: Point, to: Point, split_accuracy: number): Point[] {
+        if (from == to) {
+            return [from];
+        }
+        let partition: Point[] = [];
+        for (let i = 0; i < split_accuracy; ++i) {
+            let division_ratio = i/split_accuracy;
+            let new_point_x = from.x + division_ratio*(to.x - from.x);
+            let new_point_y = from.y + division_ratio*(to.y - from.y);
+            partition.push(new Point(new_point_x, new_point_y));
+        }
+        return partition;
     }
 }
 
