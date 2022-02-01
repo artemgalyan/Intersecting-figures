@@ -1,9 +1,9 @@
 import { Point } from '../Point.js';
 import { Shape } from '../Shape.js';
-import { Utils } from '../../Utils.js';
+import {PolygonIntersectionManager} from "./PolygonIntersectionManager.js";
+import {PointsManager} from "../PointsManager.js";
 
 class Polygon extends Shape {
-
     constructor(shapeId: number, points: Point[]) {
         super(shapeId, points);
     }
@@ -23,22 +23,20 @@ class Polygon extends Shape {
     }
 
     public contains(x: number, y: number): boolean {
-        return Utils.isInPolygon(this.points, x, y);
+        return PolygonIntersectionManager.IsInPolygon(this, x, y);
     }
-
     public upperPointY(): number {
-        return Utils.pointsUpperY(this.points);
+        return PointsManager.GetTheHighestPoint(this.points).y;
     }
     public leftPointX(): number {
-        return Utils.pointsLeftX(this.points);
+        return PointsManager.GetLeftmostPoint(this.points).x;
     }
     public lowerPointY(): number {
-        return Utils.pointsLowerY(this.points);
+        return PointsManager.GetTheLowestPoint(this.points).y;
     }
     public rightPointX(): number {
-        return Utils.pointsRightX(this.points);
+        return PointsManager.GetRightmostPoint(this.points).x;
     }
-
     public getPointsForUpdateStatus(): Point[]{
         let points: Point[] = [];
         for (let i = 0; i < this.points.length; i++){
