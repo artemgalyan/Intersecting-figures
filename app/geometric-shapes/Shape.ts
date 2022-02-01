@@ -1,7 +1,7 @@
 import { Point } from "./Point.js"
 
 abstract class Shape {
-  private static readonly SPLIT_ACCURACY: number = 32;
+  protected static readonly SPLIT_ACCURACY: number = 32;
   private static readonly FILL_COLOR: string = "#00FF00";
   public isFill: boolean;
   public points: Point[];
