@@ -2,3 +2,14 @@
 .idea/vcs.xml
 .idea/modules.xml
 .idea/Intersecting-figures.iml
+*.js
+dist/out-tsc/Utils.js
+dist/out-tsc/Program.js
+dist/out-tsc/geometric-shapes/ShapesFabric.js
+dist/out-tsc/geometric-shapes/Shape.js
+dist/out-tsc/geometric-shapes/Rectangle.js
+dist/out-tsc/geometric-shapes/Polygon.js
+dist/out-tsc/geometric-shapes/Point.js
+dist/out-tsc/geometric-shapes/Circle.js
+dist/out-tsc/DragAndDropApp.js
+dist/CanvasDragAndDrop.html
