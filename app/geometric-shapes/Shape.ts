@@ -22,8 +22,8 @@ abstract class Shape {
     context.fill();
   }
   public updateStatusShape(shapes: Shape[]) {
-    let firstFlag: boolean = false;;
-    let secondFlag: boolean = false;;
+    let firstFlag: boolean = false;
+    let secondFlag: boolean = false;
     let self = this;
     let selfPoints = this.getPointsForUpdateStatus();
 
@@ -33,21 +33,18 @@ abstract class Shape {
         for (let i = 0; i < points.length; i++) {
           if (self.contains(points[i].x, points[i].y)) {
             firstFlag = true;
+            return;
           }
         }
         for (let i = 0; i < selfPoints.length; i++) {
           if (value.contains(selfPoints[i].x, selfPoints[i].y)) {
             secondFlag = true;
+            return;
           }
         }
       }
     });
-    if (firstFlag || secondFlag) {
-      self.isFill = true;
-    }
-    else {
-      self.isFill = false;
-    }
+    self.isFill = firstFlag || secondFlag
   }
 }
 
