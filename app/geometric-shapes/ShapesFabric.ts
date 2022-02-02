@@ -1,8 +1,8 @@
 import {Point} from './Point.js'
 import { Polygon } from "./Polygon/Polygon.js";
 import { Rectangle } from "./Polygon/Rectangle.js"
-import { Circle } from './Circle/Circle.js';
-import {Ellipse} from "./ellipse/ellipse.js";
+import {Ellipse} from "./Ellipse/Ellipse.js";
+import {Circle} from "./Ellipse/Circle.js"
 
 class ShapesFabric{
 
@@ -31,6 +31,7 @@ class ShapesFabric{
         this.shapesCounter++;
         return new Ellipse(this.shapesCounter, radiusX, radiusY);
     }
+
 }
 
 export {ShapesFabric};

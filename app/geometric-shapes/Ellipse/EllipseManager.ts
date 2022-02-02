@@ -1,4 +1,4 @@
-import {Ellipse} from "./ellipse.js";
+import {Ellipse} from "./Ellipse.js";
 import {Point} from "../Point.js";
 
 class EllipseManager {
