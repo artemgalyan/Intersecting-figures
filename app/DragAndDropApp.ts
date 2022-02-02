@@ -23,7 +23,8 @@ class DragAndDropApp {
         let shapesFabric: ShapesFabric = new ShapesFabric;
 
         this.shapes = [
-            shapesFabric.CreateRectangle(50, 50),
+            shapesFabric.CreateEllipse(150, 10),
+            shapesFabric.CreateRectangle(550, 50),
             shapesFabric.CreateCircle(50),
             shapesFabric.CreateRectangle(150, 150),
             shapesFabric.CreateCircle(100),
@@ -111,7 +112,6 @@ class DragAndDropApp {
     private createUserEvents() {
         let canvas = this.canvas;
         let self = this;
-
         function redraw() {
             if (self.drag) {
                 for (let i = 0; i < self.shapes[self.indexDragShape].points.length; i++) {
