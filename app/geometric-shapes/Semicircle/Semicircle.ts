@@ -54,14 +54,11 @@ class Semicircle extends Shape {
             let y: number = Math.sqrt(this.radius_ * this.radius_ - i * i);
             points.push(new Point(i, y))
         }
-        let x = this.points[0].x;
         let y = this.points[0].y;
         let split = PointsManager.SplitSection(new Point(this.leftPointX(), y), new Point(this.rightPointX(), y), Shape.SPLIT_ACCURACY);
         split.forEach(el => points.push(el));
         return points;
     }
-
 }
 
 export {Semicircle}
-
