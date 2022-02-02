@@ -6,9 +6,8 @@ import { Point } from "../Point.js"
 class Sector extends Shape {
 
     private radius_;
-    private angle_;
 
-    protected constructor(shapeId: number, radius: number, angle: number) {
+    protected constructor(shapeId: number, radius: number) {
         super(shapeId, [new Point(0,0)]);
         this.radius_ = radius;
     }
