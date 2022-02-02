@@ -3,7 +3,8 @@ import {Polygon} from "./Polygon/Polygon.js";
 import {Rectangle} from "./Polygon/Rectangle.js"
 import {Ellipse} from "./Ellipse/Ellipse.js";
 import {Circle} from "./Ellipse/Circle.js"
-import {Square} from "./Polygon/Square";
+import {Square} from "./Polygon/Square.js";
+import {Semicircle} from "./Semicircle/Semicircle.js";
 
 class ShapesFabric {
 
@@ -38,6 +39,10 @@ class ShapesFabric {
         return new Square(this.shapesCounter, side);
     }
 
+    public CreateSemicircle(radius: number) {
+        this.shapesCounter++;
+        return new Semicircle(this.shapesCounter, radius);
+    }
 }
 
 export {ShapesFabric};
