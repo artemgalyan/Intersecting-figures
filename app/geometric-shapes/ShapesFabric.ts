@@ -2,6 +2,7 @@ import {Point} from './Point.js'
 import { Polygon } from "./Polygon/Polygon.js";
 import { Rectangle } from "./Polygon/Rectangle.js"
 import { Circle } from './Circle/Circle.js';
+import {Ellipse} from "./ellipse/ellipse.js";
 
 class ShapesFabric{
 
@@ -24,6 +25,11 @@ class ShapesFabric{
     public CreateCircle(radius: number): Circle{
         this.shapesCounter++;
         return new Circle(this.shapesCounter, radius);
+    }
+
+    public CreateEllipse(radiusX: number, radiusY: number) {
+        this.shapesCounter++;
+        return new Ellipse(this.shapesCounter, radiusX, radiusY);
     }
 }
 
