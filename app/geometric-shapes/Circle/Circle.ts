@@ -12,7 +12,7 @@ class Circle extends Shape {
     public draw(context: CanvasRenderingContext2D) {
         context.beginPath();
         context.arc(this.points[0].x, this.points[0].y, this.radius, 0, 2 * Math.PI, false);
-        context.stroke()
+        context.stroke();
         if (this.isFill) {
             this.fill(context);
         }
