@@ -1,4 +1,4 @@
-import {Rectangle} from "./Rectangle";
+import {Rectangle} from "./Rectangle.js";
 
 class Square extends Rectangle {
     constructor(squareId: number, side: number) {
