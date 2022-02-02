@@ -6,14 +6,12 @@ import { Point } from "../Point.js"
 class Sector extends Shape {
 
     private radius_;
-    private angleToX_;
     private angle_;
 
-    protected constructor(shapeId: number, radius: number, angleToX: number, angle: number) {
+    protected constructor(shapeId: number, radius: number, angle: number) {
         super(shapeId, [new Point(0,0)]);
         this.radius_ = radius;
         this.angle_ = angle;
-        this.angleToX_ = angleToX;
     }
 
     public upperPointY(): number {
