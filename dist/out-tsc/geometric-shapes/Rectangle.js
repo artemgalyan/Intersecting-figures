@@ -13,42 +13,13 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-import { Shape } from './Shape.js';
 import { Utils } from '../Utils.js';
+import { Polygon } from "./Polygon.js";
 var Rectangle = /** @class */ (function (_super) {
     __extends(Rectangle, _super);
     function Rectangle(shapeId, width, height) {
         return _super.call(this, shapeId, Utils.getPointsForRectangle(width, height)) || this;
     }
-    Rectangle.prototype.draw = function (context) {
-        var width = this.rightPointX() - this.leftPointX();
-        var height = this.lowerPointY() - this.upperPointY();
-        context.beginPath();
-        context.rect(this.leftPointX(), this.upperPointY(), width, height);
-        context.strokeRect(this.leftPointX(), this.upperPointY(), width, height);
-        if (this.isFill) {
-            this.fill(context);
-        }
-        context.closePath();
-    };
-    Rectangle.prototype.contains = function (x, y) {
-        return Utils.isInRectangle(this.points, x, y);
-    };
-    Rectangle.prototype.upperPointY = function () {
-        return Utils.pointsUpperY(this.points);
-    };
-    Rectangle.prototype.leftPointX = function () {
-        return Utils.pointsLeftX(this.points);
-    };
-    Rectangle.prototype.lowerPointY = function () {
-        return Utils.pointsLowerY(this.points);
-    };
-    Rectangle.prototype.rightPointX = function () {
-        return Utils.pointsRightX(this.points);
-    };
-    Rectangle.prototype.getPointsForUpdateStatus = function () {
-        return this.points;
-    };
     return Rectangle;
-}(Shape));
+}(Polygon));
 export { Rectangle };

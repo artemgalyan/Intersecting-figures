@@ -4,22 +4,13 @@ var Shape = /** @class */ (function () {
         this.points = points;
         this.isFill = false;
     }
-    Shape.prototype.upperPointY = function () { return null; };
-    Shape.prototype.leftPointX = function () { return null; };
-    Shape.prototype.lowerPointY = function () { return null; };
-    Shape.prototype.rightPointX = function () { return null; };
-    Shape.prototype.draw = function (context) { };
-    Shape.prototype.contains = function (x, y) { return null; };
-    Shape.prototype.getPointsForUpdateStatus = function () { return null; };
     Shape.prototype.fill = function (context) {
-        context.fillStyle = '#FF0000';
+        context.fillStyle = Shape.FILL_COLOR;
         context.fill();
     };
     Shape.prototype.updateStatusShape = function (shapes) {
         var firstFlag = false;
-        ;
         var secondFlag = false;
-        ;
         var self = this;
         var selfPoints = this.getPointsForUpdateStatus();
         shapes.forEach(function (value) {
@@ -28,22 +19,21 @@ var Shape = /** @class */ (function () {
                 for (var i = 0; i < points.length; i++) {
                     if (self.contains(points[i].x, points[i].y)) {
                         firstFlag = true;
+                        return;
                     }
                 }
                 for (var i = 0; i < selfPoints.length; i++) {
                     if (value.contains(selfPoints[i].x, selfPoints[i].y)) {
                         secondFlag = true;
+                        return;
                     }
                 }
             }
         });
-        if (firstFlag || secondFlag) {
-            self.isFill = true;
-        }
-        else {
-            self.isFill = false;
-        }
+        self.isFill = firstFlag || secondFlag;
     };
+    Shape.SPLIT_ACCURACY = 32;
+    Shape.FILL_COLOR = "#00FF00";
     return Shape;
 }());
 export { Shape };

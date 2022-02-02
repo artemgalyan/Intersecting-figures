@@ -6,7 +6,8 @@ var DragAndDropApp = /** @class */ (function () {
         var context = canvas.getContext("2d");
         var shapesFabric = new ShapesFabric;
         this.shapes = [
-            shapesFabric.CreateRectangle(50, 50),
+            shapesFabric.CreateEllipse(150, 10),
+            shapesFabric.CreateRectangle(550, 50),
             shapesFabric.CreateCircle(50),
             shapesFabric.CreateRectangle(150, 150),
             shapesFabric.CreateCircle(100),
@@ -52,8 +53,7 @@ var DragAndDropApp = /** @class */ (function () {
         var finalResult = false;
         this.shapes.forEach(function (value) {
             result = false;
-            var shape = value;
-            result = shape.contains(x, y);
+            result = value.contains(x, y);
             if (result) {
                 finalResult = true;
             }
@@ -66,8 +66,7 @@ var DragAndDropApp = /** @class */ (function () {
         var finalIndex = 0;
         this.shapes.forEach(function (value) {
             result = false;
-            var shape = value;
-            result = shape.contains(x, y);
+            result = value.contains(x, y);
             if (result) {
                 finalIndex = index;
             }
