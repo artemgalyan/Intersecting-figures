@@ -6,7 +6,8 @@ var DragAndDropApp = /** @class */ (function () {
         var context = canvas.getContext("2d");
         var shapesFabric = new ShapesFabric;
         this.shapes = [
-            shapesFabric.CreateEllipse(150, 10),
+            shapesFabric.CreateEllipse(150, 50),
+            shapesFabric.CreateSemicircle(50),
             shapesFabric.CreateRectangle(550, 50),
             shapesFabric.CreateCircle(50),
             shapesFabric.CreateRectangle(150, 150),

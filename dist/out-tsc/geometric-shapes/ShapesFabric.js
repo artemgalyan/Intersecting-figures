@@ -2,6 +2,8 @@ import { Polygon } from "./Polygon/Polygon.js";
 import { Rectangle } from "./Polygon/Rectangle.js";
 import { Ellipse } from "./Ellipse/Ellipse.js";
 import { Circle } from "./Ellipse/Circle.js";
+import { Square } from "./Polygon/Square.js";
+import { Semicircle } from "./Semicircle/Semicircle.js";
 var ShapesFabric = /** @class */ (function () {
     function ShapesFabric() {
         this.shapesCounter = 0;
@@ -21,6 +23,14 @@ var ShapesFabric = /** @class */ (function () {
     ShapesFabric.prototype.CreateEllipse = function (radiusX, radiusY) {
         this.shapesCounter++;
         return new Ellipse(this.shapesCounter, radiusX, radiusY);
+    };
+    ShapesFabric.prototype.CreateSquare = function (side) {
+        this.shapesCounter++;
+        return new Square(this.shapesCounter, side);
+    };
+    ShapesFabric.prototype.CreateSemicircle = function (radius) {
+        this.shapesCounter++;
+        return new Semicircle(this.shapesCounter, radius);
     };
     return ShapesFabric;
 }());
